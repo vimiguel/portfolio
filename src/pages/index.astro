@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import CaseCard from '../components/CaseCard.astro';
 import CTA from '../components/CTA.astro';
-import { site, numeros, metodo, conteudo } from '../data/site';
+import { site, tiposProjeto, competencias, metodo, conteudo } from '../data/site';
 
 // Cases marcados com "destaque: true", na ordem definida no arquivo
 const destaques = (await getCollection('cases', ({ data }) => data.destaque))
@@ -26,17 +26,23 @@ const destaques = (await getCollection('cases', ({ data }) => data.destaque))
     </div>
   </section>
 
-  <!-- NÚMEROS -->
-  <div class="container">
-    <div class="numeros">
-      {numeros.map((n) => (
-        <div class="numero">
-          <strong>{n.valor}</strong>
-          <span>{n.rotulo}</span>
-        </div>
+  <!-- TIPOS DE PROJETO -->
+  <section class="container tipos" aria-labelledby="tipos-titulo">
+    <h2 id="tipos-titulo" class="kicker">Tipos de projeto que já liderei</h2>
+    <ol class="tipos-grade">
+      {tiposProjeto.map((t) => (
+        <li class="tipo">
+          <h3>{t.titulo}</h3>
+          <p>{t.texto}</p>
+          <ul class="tipo-cases">
+            {t.cases.map((c) => (
+              <li><a href={`/cases/${c.slug}`}>{c.nome} →</a></li>
+            ))}
+          </ul>
+        </li>
       ))}
-    </div>
-  </div>
+    </ol>
+  </section>
 
   <!-- CASES EM DESTAQUE -->
   <section class="secao">
@@ -54,8 +60,34 @@ const destaques = (await getCollection('cases', ({ data }) => data.destaque))
     </div>
   </section>
 
-  <!-- COMO EU TRABALHO -->
+  <!-- COMPETÊNCIAS -->
   <section class="secao secao--alt">
+    <div class="container">
+      <span class="kicker">Competências</span>
+      <h2 class="titulo-secao">O que eu levo pro time</h2>
+      <p class="lead" style="margin-bottom: 48px">
+        As habilidades que as vagas de produto mais pedem hoje, cada uma com um resultado que comprova.
+      </p>
+      <div class="competencias">
+        {competencias.map((c) => (
+          <article class="competencia">
+            <h3>{c.titulo}</h3>
+            <ul class="keywords" aria-label="Palavras-chave">
+              {c.keywords.map((k) => <li>{k}</li>)}
+            </ul>
+            <p>{c.texto}</p>
+            <a href={c.prova.href} class="prova">
+              <strong>{c.prova.valor}</strong>
+              <span>{c.prova.rotulo} →</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO EU TRABALHO -->
+  <section class="secao">
     <div class="container">
       <span class="kicker">Como eu trabalho</span>
       <h2 class="titulo-secao">Refinamento antes da execução</h2>
@@ -74,7 +106,7 @@ const destaques = (await getCollection('cases', ({ data }) => data.destaque))
   </section>
 
   <!-- CONTEÚDO / YOUTUBE -->
-  <section class="secao">
+  <section class="secao secao--alt">
     <div class="container conteudo">
       <div>
         <span class="kicker">Conteúdo</span>

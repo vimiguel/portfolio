@@ -14,7 +14,7 @@ export const site = {
     titulo: 'Estratégia que',
     destaque: 'sai do papel.',
     texto:
-      'Lidero projetos complexos, com muitas áreas e muita coisa em jogo. Organizo a priorização, deixo a governança leve e trago resultado que dá pra medir, de 420+ franquias a campanhas com milhões de pessoas.',
+      'Lidero projetos complexos, com muitas áreas e muita coisa em jogo. Organizo a priorização, deixo a governança leve e trago resultado que dá pra medir, seja numa operação nacional, num produto novo ou numa jornada com IA.',
   },
 
   // Deixe vazio ('') para esconder o botão correspondente.

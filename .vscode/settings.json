@@ -1,0 +1,4 @@
+{
+  "files.associations": { "*.mdx": "markdown" },
+  "editor.formatOnSave": false
+}

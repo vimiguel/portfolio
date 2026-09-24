@@ -1,0 +1,22 @@
+---
+import { site } from '../data/site';
+
+const atual = Astro.url.pathname;
+const ativo = (href: string) => (atual.startsWith(href) ? 'page' : undefined);
+---
+
+<header class="header">
+  <div class="container">
+    <a href="/" class="marca">Vinícius<span>.</span>Miguel</a>
+    <nav class="nav" aria-label="Principal">
+      <a href="/cases" aria-current={ativo('/cases')}>Cases</a>
+      <a href="/sobre" aria-current={ativo('/sobre')}>Sobre</a>
+      <a href="/contato" class="nav-extra" aria-current={ativo('/contato')}>Contato</a>
+      {site.links.agenda && (
+        <a href={site.links.agenda} class="botao botao--primario" target="_blank" rel="noopener">
+          Agendar conversa
+        </a>
+      )}
+    </nav>
+  </div>
+</header>

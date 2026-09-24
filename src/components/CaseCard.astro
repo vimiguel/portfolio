@@ -1,0 +1,28 @@
+---
+// Card usado na home e na lista de cases.
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  item: CollectionEntry<'cases'>;
+}
+
+const { item } = Astro.props;
+const { titulo, empresa, resumo, logo, metricas } = item.data;
+const principal = metricas[0];
+---
+
+<a href={`/cases/${item.id}`} class="card" data-empresa={empresa}>
+  <div class="card-topo">
+    {logo ? <img src={logo} alt={empresa} class="card-logo" loading="lazy" /> : <span class="card-empresa">{empresa}</span>}
+    <span class="card-seta" aria-hidden="true">→</span>
+  </div>
+  {logo && <span class="card-empresa">{empresa}</span>}
+  <h3>{titulo}</h3>
+  <p>{resumo}</p>
+  {principal && (
+    <div class="card-metrica">
+      <strong>{principal.valor}</strong>
+      <span>{principal.rotulo}</span>
+    </div>
+  )}
+</a>

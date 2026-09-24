@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import CTA from '../components/CTA.astro';
+import { site, experiencias, ferramentas } from '../data/site';
+---
+
+<Base titulo="Sobre" descricao={site.descricao}>
+  <section class="case-topo">
+    <div class="container">
+      <span class="kicker">Sobre</span>
+      <h1>Negócio, produto e tecnologia na mesma mesa.</h1>
+      <p class="lead">
+        Hoje lidero um portfólio de projetos estratégicos e um time de 7 pessoas. Antes disso, fui PM em ERP global, IA conversacional para contas globais, SaaS e startup B2B. O que se repete em todas essas experiências: pegar um problema complexo, com muita gente envolvida, e transformar em algo priorizado, estruturado e mensurável.
+      </p>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom: 96px">
+    <span class="kicker">Trajetória</span>
+    <ul class="trajetoria">
+      {experiencias.map((e) => (
+        <li>
+          <div>
+            <h3>{e.empresa}</h3>
+            <span class="periodo">{e.periodo}</span>
+          </div>
+          <div>
+            <p class="cargo">{e.cargo}</p>
+            <p>{e.texto}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <div class="ferramentas">
+      <span class="kicker">Ferramentas e repertório</span>
+      <ul class="tags">
+        {ferramentas.map((f) => <li class="tag">{f}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <CTA />
+</Base>

@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+
+const canais = [
+  { rotulo: 'Agenda', texto: 'Marcar uma conversa', url: site.links.agenda },
+  { rotulo: 'WhatsApp', texto: 'Mandar mensagem', url: site.links.whatsapp },
+  { rotulo: 'YouTube', texto: '@viniciusmiguelyt', url: site.links.youtube },
+  { rotulo: 'LinkedIn', texto: 'Ver perfil', url: site.links.linkedin },
+  { rotulo: 'E-mail', texto: site.links.email, url: site.links.email ? `mailto:${site.links.email}` : '' },
+].filter((c) => c.url);
+---
+
+<Base titulo="Contato">
+  <section class="case-topo">
+    <div class="container">
+      <span class="kicker">Contato</span>
+      <h1>Vamos conversar.</h1>
+      <p class="lead">Oportunidade, projeto ou só uma troca de ideias sobre como fazer iniciativas andarem. Escolha o canal que for melhor pra você.</p>
+    </div>
+  </section>
+  <section class="container" style="padding-bottom: 120px">
+    <div class="contatos">
+      {canais.map((c) => (
+        <a class="contato" href={c.url} target="_blank" rel="noopener">
+          <small>{c.rotulo}</small>
+          <strong>{c.texto} →</strong>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

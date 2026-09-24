@@ -1,0 +1,14 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="secao cta">
+  <div class="container">
+    <h2 class="titulo-secao">Tem um projeto travado?</h2>
+    <p>Vamos conversar sobre o desafio. Posso ajudar a clarear prioridades, desenhar a governança e fazer a iniciativa andar.</p>
+    <div class="acoes" style="margin-top: 28px">
+      {site.links.agenda && <a href={site.links.agenda} class="botao botao--primario" target="_blank" rel="noopener">Agendar conversa</a>}
+      {site.links.whatsapp && <a href={site.links.whatsapp} class="botao botao--contorno" target="_blank" rel="noopener">Chamar no WhatsApp</a>}
+    </div>
+  </div>
+</section>

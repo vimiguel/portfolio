@@ -138,9 +138,9 @@ h1, h2, h3 { line-height: 1.05; margin: 0; letter-spacing: -0.02em; }
 
 /* ── Hero ────────────────────────────────────────────────────── */
 
-.hero { padding-block: clamp(56px, 10vw, 120px) clamp(40px, 6vw, 72px); }
+.hero { padding-block: clamp(40px, 6vw, 80px) clamp(32px, 4vw, 48px); }
 .hero h1 {
-  font-size: clamp(3rem, 10.5vw, 8.6rem);
+  font-size: clamp(2.6rem, 6.4vw, 5.6rem);
   font-weight: 900;
   font-stretch: 112%;
   text-transform: uppercase;
@@ -377,7 +377,8 @@ h1, h2, h3 { line-height: 1.05; margin: 0; letter-spacing: -0.02em; }
 }
 .contato:hover { transform: translateY(-4px); border-color: var(--tinta); box-shadow: 6px 6px 0 var(--laranja); }
 .contato small { display: block; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--tinta-2); font-weight: 700; margin-bottom: 8px; }
-.contato strong { font-size: 1.35rem; }
+.contato strong { font-size: 1.35rem; overflow-wrap: anywhere; }
+.contato-detalhe { display: block; margin-top: 6px; font-size: 0.9rem; color: var(--tinta-2); overflow-wrap: anywhere; }
 
 /* ── Footer ──────────────────────────────────────────────────── */
 

@@ -7,7 +7,7 @@ const canais = [
   { rotulo: 'WhatsApp', texto: 'Mandar mensagem', url: site.links.whatsapp },
   { rotulo: 'YouTube', texto: '@viniciusmiguelyt', url: site.links.youtube },
   { rotulo: 'LinkedIn', texto: 'Ver perfil', url: site.links.linkedin },
-  { rotulo: 'E-mail', texto: site.links.email, url: site.links.email ? `mailto:${site.links.email}` : '' },
+  { rotulo: 'E-mail', texto: 'Enviar e-mail', detalhe: site.links.email, url: site.links.email ? `mailto:${site.links.email}` : '' },
 ].filter((c) => c.url);
 ---
 
@@ -25,6 +25,7 @@ const canais = [
         <a class="contato" href={c.url} target="_blank" rel="noopener">
           <small>{c.rotulo}</small>
           <strong>{c.texto} →</strong>
+          {c.detalhe && <span class="contato-detalhe" set:html={c.detalhe.replace('@', '<wbr>@')} />}
         </a>
       ))}
     </div>

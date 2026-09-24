@@ -11,10 +11,10 @@ export const site = {
 
   hero: {
     kicker: 'Produto · Projetos · Governança',
-    titulo: 'Estratégia que',
-    destaque: 'sai do papel.',
+    titulo: 'Transformo estratégia',
+    destaque: 'em execução.',
     texto:
-      'Lidero projetos complexos, com muitas áreas e muita coisa em jogo. Organizo a priorização, deixo a governança leve e trago resultado que dá pra medir, seja numa operação nacional, num produto novo ou numa jornada com IA.',
+      'Lidero produtos e projetos complexos, conectando negócio, tecnologia e pessoas para transformar problemas ambíguos em iniciativas claras, priorizadas e mensuráveis.',
   },
 
   // Deixe vazio ('') para esconder o botão correspondente.

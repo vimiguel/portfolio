@@ -1,7 +1,7 @@
 ---
 titulo: Copa de TODOS, a operação das figurinhas da Copa 2026
 empresa: TODOS Empreendimentos
-periodo: 2026
+periodo: "2026"
 papel: Liderança de Produto e PMO
 resumo: Transformei mais de 420 franquias do Cartão de TODOS em pontos oficiais de venda, reserva, retirada e troca do álbum da Copa do Mundo FIFA 2026, ligando o app à operação física.
 logo: /logos/panini.png
